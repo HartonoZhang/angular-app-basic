@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-app';
+  title = 'my-first-angular-app';
+  increment = 1;
+  arr = [
+    this.increment
+  ];
+
+  onClickButton(){
+    console.log('button clicked');
+  }
+
+  incrementPlus(){
+    this.increment++;
+    this.arr.push(this.increment);
+  }
 }
