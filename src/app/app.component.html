@@ -12,11 +12,17 @@
   <li *ngFor="let item of arr">
     {{item}}
   </li>
-</ul>
+</ul> -->
 
-<app-component-one></app-component-one>
-<app-component-two></app-component-two> -->
 
 <h1>root app</h1>
+<div style="display: flex; flex-direction: column;">
+  <a routerLink="/one">component one</a>
+  <a routerLink="/two">component two</a>
+  <a routerLink="/pages/one">pages one</a>
+  <a routerLink="/pages/two">pages two</a>
+</div>
 
-<router-outlet></router-outlet>
+<div style="border: 1px solid black;">
+  <router-outlet></router-outlet>
+</div>

@@ -14,7 +14,7 @@ import { ComponentTwoComponent } from './component-two/component-two.component';
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    //component: AppComponent,
     children: [
       {
         path: 'one',

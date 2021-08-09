@@ -1,1 +1,51 @@
 <p>page-one works!</p>
+
+<div>
+    <table border="1">
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Action</th>
+        </tr>
+        <ng-container *ngFor="let item of items">
+            <tr>
+                <td>{{item.id}}</td>
+                <td>
+                    <ng-container *ngIf="!item.mode_edit">
+                        {{item.name}}
+                    </ng-container>
+                    <ng-container *ngIf="item.mode_edit">
+                        <input type="text" placeholder="name" id="name" [(ngModel)]="itemTemporary.name">
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="!item.mode_edit">
+                        {{item.address}}
+                    </ng-container>
+                    <ng-container *ngIf="item.mode_edit">
+                        <textarea name="address" id="address" cols="10" rows="2" 
+                            [(ngModel)]="itemTemporary.address">
+                        </textarea>
+                    </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngIf="!item.mode_edit">
+                        <button (click)="toggleMode(item, true)">edit</button>
+                        <button (click)="onDeleteItem(item)">delete</button>
+                    </ng-container>
+                    <ng-container *ngIf="item.mode_edit">
+                        <button (click)="toggleMode(item, false)">cancel</button>
+                        <button>save</button>
+                    </ng-container>
+                </td>
+            </tr>
+        </ng-container>
+        <tr>
+            <td colspan="4">
+                <button (click)="onPopItem()">-</button>
+                <button (click)="onPushItem()">+</button>
+            </td>
+        </tr>
+    </table>
+</div>
