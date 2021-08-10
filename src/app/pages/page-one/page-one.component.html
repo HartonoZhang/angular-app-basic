@@ -36,7 +36,7 @@
                     </ng-container>
                     <ng-container *ngIf="item.mode_edit">
                         <button (click)="toggleMode(item, false)">cancel</button>
-                        <button>save</button>
+                        <button (click)="onSaveItem(item)">save</button>
                     </ng-container>
                 </td>
             </tr>

@@ -73,6 +73,15 @@ export class PageOneComponent implements OnInit {
     }
     this.items.splice(itemIndex, 1);
   }
+
+  onSaveItem(item: ItemModel){
+    const itemIndex = this.items.indexOf(item);
+    if(itemIndex < 0){
+      return;
+    }
+    this.items[itemIndex] = JSON.parse(JSON.stringify(this.itemTemporary));
+    this.items[itemIndex].mode_edit = false;
+  }
   
 
 }
